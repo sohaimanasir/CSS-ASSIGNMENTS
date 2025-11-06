@@ -1,0 +1,21 @@
+
+
+/* --- Color Format Assignments --- */
+
+/* Row 1 */
+.box1 { background-color: #eb7065; }        /* HEX */
+.box2 { background-color: rgb(91, 68, 184); } /* RGB */
+.box3 { background-color: hsl(88, 29%, 65%); } /* HSL */
+.box4 { background-color: #b15f72; }        /* HEX */
+
+/* Row 2 */
+.box5 { background-color: rgb(68, 83, 114); } 
+.box6 { background-color: hsl(9, 34%, 33%); }  
+.box7 { background-color: #C06C84; }            
+.box8 { background-color: rgb(5, 150, 120); }   
+
+/* Row 3 */
+.box9  { background-color: hsl(190, 60%, 50%); } 
+.box10 { background-color: #F4B400; }             
+.box11 { background-color: rgb(102, 102, 204); }  
+.box12 { background-color: hsl(250, 40%, 50%); }  
