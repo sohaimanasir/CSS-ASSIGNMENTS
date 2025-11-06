@@ -1,0 +1,28 @@
+/* Type selector */
+div {
+    color: navy;
+}
+
+/* Class selector */
+.bedroom{
+    background-color: lightblue;
+}
+
+/* id selector */
+#kitchen {
+    color: orange;
+}
+
+/* Child selector */
+.house > div{
+    background-color: lightgray;
+}
+/* adjacent sibling */
+.living-room + div{
+    background-color: green;
+}
+
+/* general sibling */
+#kitchen ~ div{
+    background-color: lightpink;
+}
