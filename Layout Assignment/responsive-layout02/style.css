@@ -1,0 +1,169 @@
+* {
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    height: 100vh;
+    /* display: flex; */
+    gap: 20px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.logo {
+    width: 20%;
+    height: 30px;
+    background-color: rgb(148, 34, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.menu {
+    width: 80%;
+    height: 30px;
+    background-color: rgb(223, 73, 68);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.header-section {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 500px;
+}
+
+.header {
+    background-color: rgb(107, 18, 18);
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+
+.social-section {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+
+.social-left {
+    display: flex;
+    width: 80%;
+    /* gap: 10px; */
+
+}
+
+.a1a3 {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.a2a4 {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.article {
+    width: 350px;
+    height: 150px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.social-right {
+    width: 20%;
+    display: flex
+}
+
+.social {
+    width: 100%;
+    height: 300px;
+    background-color: palevioletred;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.header-right {
+    width: 20%;
+    height: 500px;
+}
+
+.ads {
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 10px;
+
+}
+
+footer {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.footer {
+    width: 80%;
+    height: 120px;
+    background-color: rgb(107, 18, 18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.tagcloud {
+    width: 20%;
+    background-color: rgb(148, 34, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
