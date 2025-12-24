@@ -1,5 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --primary: #ffffff;
+  --accent: #ff3366;
+  --accent-light: #ff6b96;
+  --text: #ffffff;
+  --text-light: #b0b0b0;
+  --bg: #0a0a0a;
+  --card-bg: #1a1a1a;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  min-height: 100vh;
+  color: var(--text);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated background particles */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 20% 50%,
+      rgba(255, 51, 102, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 51, 102, 0.1) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  border-radius: 2px;
+}
+
+/* Grid Layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* Box Cards */
+.box {
+  background: var(--card-bg);
+  padding: 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.box:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.box:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.box:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Decorative elements */
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 51, 102, 0.08) 0%,
+    transparent 70%
+  );
+  transition: right 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  width: 100%;
+}
+
+.box:hover::after {
+  right: -100px;
+}
+
+.box:hover {
+  transform: translateX(10px);
+  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+  box-shadow: -20px 20px 60px rgba(255, 51, 102, 0.2);
+}
+
+/* Typography */
+.box h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.box:hover h2 {
+  color: var(--accent);
+}
+
+.box p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  font-style: italic;
+}
+
+/* Button Styling */
+button {
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-light) 100%
+  );
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(255, 51, 102, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 51, 102, 0.3);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+button a {
+  display: block;
+  padding: 1.2rem 3rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .box {
+    padding: 5rem 4rem;
+  }
+
+  .box:nth-child(even) {
+    text-align: right;
+  }
+
+  .box:nth-child(even) p {
+    margin-left: auto;
+  }
+
+  .box:nth-child(even):hover {
+    transform: translateX(-10px);
+  }
+
+  .box:nth-child(even)::after {
+    right: auto;
+    left: -200px;
+  }
+
+  .box:nth-child(even):hover::after {
+    left: -100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  header {
+    margin-bottom: 3rem;
+  }
+
+  header h1::after {
+    width: 60px;
+  }
+
+  .box {
+    padding: 3rem 2rem;
+  }
+
+  button a {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra polish */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
